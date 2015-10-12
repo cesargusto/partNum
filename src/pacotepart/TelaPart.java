@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class TelaPart {
     
 public void exibeMenu(){
-    String textoMenu = "*** Menu ***\n\n";
+    String textoMenu = "\n\n*** Menu ***\n\n";
 			
         textoMenu += "1 - Carregar arquivo.\n";
         textoMenu += "2 - Gerar solução inicial [Aleatória].\n";
@@ -27,12 +27,18 @@ public void exibeMsg(String msg, boolean quebra){
         System.out.print(msg);
 }
 public void exibeTitulo(String titulo){
-    System.out.println("\n\n***** "+titulo+" ***** \n\n");
+    System.out.println("\n***** "+titulo+" ***** \n");
+}
+public void exibeVetor(int vetor[]){
+    for(int x=0;x<vetor.length;x++){
+        System.out.printf(" %d ",vetor[x]);
+    }
+    System.out.println();
 }
 public int pegaValor(){
    Scanner entrada = new Scanner(System.in);
-   int valor = entrada.nextInt();
-   return valor;
+    int valor = entrada.nextInt();
+        return valor;
 }
     
 }
