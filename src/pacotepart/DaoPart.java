@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class DaoPart {
     
-    private final String CAMINHO_ARQUIVO = "dados/teste1.txt";
+    private final String CAMINHO_ARQUIVO = "dados/teste.txt";
     private FileReader arq;
     private BufferedReader lerArq;
     public int tamanho = 0;
@@ -25,18 +25,23 @@ public class DaoPart {
         arq = new FileReader(CAMINHO_ARQUIVO);
         lerArq = new BufferedReader(arq);
     }
-    
-    int[] lerArquivo()throws IOException {
-
-        String linha = lerArq.readLine();
-        tamanho = Integer.parseInt(linha);
-        linha = lerArq.readLine();
-        //linha = lerArq.readLine();
-        this.vetor = new int[tamanho];
-        for(int i=0;i<tamanho;i++){
+    int leTamanhoVetor()throws IOException {
+        String l = lerArq.readLine();
+        tamanho = Integer.parseInt(l);
+            return tamanho;
+    }
+    int[] lerArquivo(int t)throws IOException {
+        String linha="";
+        this.vetor = new int[t];
+        lerArq.readLine();
+        for(int i=0;i<t;i++){
             linha=lerArq.readLine();
-            vetor[i]=Integer.parseInt(linha);   
+            this.vetor[i]=Integer.parseInt(linha);
         }
         return vetor;    
     }
+    public void fechar()throws IOException{
+        this.lerArq.close();
+    }
+    
 }
