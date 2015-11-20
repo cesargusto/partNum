@@ -9,9 +9,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *
  * @author cesar
  */
+
 public class DaoPart {
 
     private String caminho;
@@ -21,8 +21,8 @@ public class DaoPart {
     private int vetor[];
 
     DaoPart(String nome) throws FileNotFoundException {
-	this.caminho = "/home/cesar/NetBeansProjects/ParticaoNumeros/dados/" + nome;
-//        this.caminho = "dados/" + nome;
+//	this.caminho = "/home/cesar/NetBeansProjects/ParticaoNumeros/dados/" + nome;
+        this.caminho = "pacotepart/dados/" + nome;
         arq = new FileReader(this.caminho);
         lerArq = new BufferedReader(arq);
     }
